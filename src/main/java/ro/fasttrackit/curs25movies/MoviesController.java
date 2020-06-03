@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MoviesController {
+    private final MoviesService movieService;
+
+    public MoviesController(MoviesService movieService) {
+        this.movieService = movieService;
+    }
+
     @GetMapping("movies")
     public String moviesPage(){
         return "movies";
